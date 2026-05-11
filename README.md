@@ -166,7 +166,10 @@ Note these are my own personal notes and are a work in progress as I study towar
     * Spark
     * S3
     * Files (Orc, Parquet)
-
+  * Outputs:
+    * S3
+    * JDBC (RDS, Redshift)
+    * Glue Data Catalog
 # Miscellaneous
 
 ## AWS Batch
