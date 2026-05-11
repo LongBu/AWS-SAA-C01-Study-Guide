@@ -44,9 +44,13 @@ Note these are my own personal notes and are a work in progress as I study towar
 
 ## SM experiments
 
+## SM Canvas
+  * Service for non-coders to build models
+  * Doesn't provide comprehensive data preparation and transformations (if needed, use Data Wrangler)
 
-## SM data wrangler
-  *  Offers easy to use visual interface for data prep (e.g. cleaning transforming analyzing data) which is ideal for limited code use experience
+## SM Data Wrangler
+  * Provide comprehensive data preparation and transformations
+  * Offers easy to use visual interface for data prep (e.g. cleaning transforming analyzing data) which is ideal for limited code use experience
   * Inputs
     * S3
     * Athena
