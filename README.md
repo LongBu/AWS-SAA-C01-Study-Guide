@@ -36,12 +36,31 @@ Note these are my own personal notes and are a work in progress as I study towar
 
 ## SM feature store 
   * off-line versus online
+    
 ## SM script mode
   * run custom training script inside managed sage maker containers
+
 ## SM serverless inference
 
 ## SM experiments
 
+
+## SM data wrangler
+  *  Offers easy to use visual interface for data prep (e.g. cleaning transforming analyzing data) which is ideal for limited code use experience
+  * Inputs
+    * S3
+    * Athena
+    * Redshift
+    * Lake formation
+    * SageMaker Feature Store
+    * JDBC (Databricks, Saas)
+  * Outputs (via a notebook)
+    * SageMaker Processing
+    * SageMaker Pipelines
+    * SageMaker Feature Store
+  * Does not integrate with DynamoDB
+
+### SM Data Wrangler versus AWS Glue
 
 ## SM Categories of built-in algorithm:
   * supervised
@@ -86,13 +105,6 @@ Note these are my own personal notes and are a work in progress as I study towar
 
 ### linear learner versus XGBoost per class imbalance
 
-
-## SM data wrangler
-  *  Offers easy to use visual interface for data prep (e.g. cleaning transforming analyzing data) which is ideal for limited code use experience
-  * Integration(s)?
-
-### SM Data Wrangler versus AWS Glue
-
 # Data mesh architecture
   * data as a product with the decentralized data ownership and domain oriented architecture
 
@@ -132,17 +144,38 @@ Note these are my own personal notes and are a work in progress as I study towar
   * Mount versus linked
 
 ## S3
+
 ### standard versus intelligent tearing
 
 ## Database
+
 ### Redshift
   * data warehousing
+
+
 # AWS Glue
   * glue partitioning aids parallel processing and boosts query performance
+  * Inputs:
+    * Aurora
+    * Postgres, Redshift, SqlServer, Oracle, MySql (JDBC datastores) (RDS based or otherwise)
+    * dynamodb
+    * mongodb/documentdb
+    * Kinesis Data Streams
+    * Kafka/Amazon Managed Streaming for Apache Kafka
+    * Athena
+    * Spark
+    * S3
+    * Files (Orc, Parquet)
 
 # Miscellaneous
+
+## AWS Batch
+  * Better matched over SM Batch jobs for extremely large, compute-intensive/high performance/scalable batch workloads 
+
 ## Catastrophic forgetting: when NNs abruptly lose previously learned information when trained on new, sequential data
+
 ## Feature selection versus model regularization
+
 ## L1 (LASSO) vs L2 (Ridge) Regularization
   * Preventing overfitting in ML in general
   * A regularization term is added as weights are learned
