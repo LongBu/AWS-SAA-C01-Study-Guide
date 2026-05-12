@@ -103,6 +103,7 @@ Note these are my own personal notes and are a work in progress as I study towar
     * Naive Bayes
     * Logistic Regression
     * Recommendation Engine (ALS)
+    * Support Vector Machine (SVM)
   * Neither: Reinforcement Learning
 
 ### Image classification
