@@ -38,7 +38,8 @@ Note these are my own personal notes and are a work in progress as I study towar
   * off-line versus online
     
 ## SM script mode
-  * run custom training script inside managed sage maker containers
+  * run custom training scripts inside managed prebuilt SM containers
+  * allows the use of AWS infrastructure to enable scaling, distribute training and logging
 
 ## SM serverless inference
 
