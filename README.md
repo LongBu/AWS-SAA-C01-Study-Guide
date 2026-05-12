@@ -109,7 +109,9 @@ Note these are my own personal notes and are a work in progress as I study towar
 
 ### Image classification
 ### XG boost
-  * highly imbalanced data 
+  * Effective at working with highly imbalanced data
+  * Provides a strong balance between accuracy and traceability of feature importance and how it influences predictions (much the case for other Tree-based algorithms)
+
 ### Linear Learner
   * most effective approach to establish a simple, interpretable performance baseline to evaluate against more complex models in SM utilizing the same data
 
@@ -256,7 +258,16 @@ Note these are my own personal notes and are a work in progress as I study towar
 
 ## EC2 type suitability
 
-## (Model) Stacking
+## Ensemble Learning
+
+### (Model) Stacking
+  * Ensemble learning technique that combines more that one model through a meta-model that optimally weights/integrates the base learners to improve predictive performance at the expense of interpretability
+
+### Bagging
+  * Trains multiple instances of the same algorithm on bootstrapped samples and averages these predictions to reduce variance (eg: Random Forest)
+
+### Voting Ensemble
+  * Simple aggregation technique where multiple models vote (greatest result for classification and average for regression) without learning optimal weights or relationships
 
 # Amazon Translate
   * If small volumes of data, orchestrate via Lambda (15 minute limit)
