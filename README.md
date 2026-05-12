@@ -245,16 +245,26 @@ Note these are my own personal notes and are a work in progress as I study towar
 
 ## Athena
   * partition projection
+
 ## AWS CodeBuild
   * a fully managed continuous integration service that compiles source code, runs tests, and produces ready-to-deploy software packages
+
 ## Blue/Green Deployments
-  * All at once: shift everything, monitor, terminate blue fleet
-  * Canary: shift a small portion of traffic and monitor
-  * Linear: Shift traffic in linearly spaced steps
+  * Allows safe rollouts with instant rollback if problems encountered
+  * Variants:
+    * All at once: shift everything, monitor, terminate blue fleet
+    * Canary: shift a small portion of traffic and monitor
+    * Linear: Shift traffic in linearly spaced steps
+
+## Weighted Traffic Splitting
+  * Methodology of gradually routing traffic to different model versions so as to A/B test
+  * Does not offer the same environmental isolation as that of Blue/Green Deployments
 
 # EC2
+
 ## EC2 Autoscaling
-### schedule versus target tracking
+
+### Schedule versus target tracking
 
 ## EC2 type suitability
 
