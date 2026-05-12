@@ -136,7 +136,28 @@ Note these are my own personal notes and are a work in progress as I study towar
 ## Kinesis data stream 
   * shard: a processing unit with a fixed data throughput capacity
 ## Amazon firehose
-  # designed to deliver streaming data into AWS services (eg: S3, Redshift)
+  * designed to deliver streaming data into AWS services (eg: S3, Redshift)
+
+## Amazon Comprehend (Medical):
+  * Serverless NLP service harnessing NLP to uncover valuable insights and connections in text analytics
+  * Easier to implement than an NLP model from the ground up
+  * Medical version detects PHI via DetectPHI API
+  * Input social media, emails, web pages, documents, transcripts, medical records (Comprehend Medical)
+  * PII Identification & Redaction
+  * Targeted sentiment (for specific entities)
+  * Can train on your own data
+  * Can integrate with S3, Firehose, Lambda, Lex (eg realtime sentiment analysis), KMS, etc.
+  * Comprehend asynchronous batch designed for large scale analysis from S3, automatically scaling, parallel processing, all with minimal overhead
+  * Comprehend real-time inference conducted via API
+  * Results of the model are the following:
+    * Events detection
+    * Key phrases-noun phrases
+    * Language
+    * Sentiment
+    * Syntax-boils down each word into a part of speech
+    * Entities-nouns
+      * Entity types include: COMMERCIAL_ITEM, DATE, EVENT, LOCATION, ORGANIZATION, OTHER, PERSON, QUANTITY, TITLE
+      * Creating a Custom entity recognizer/recognition model can extend beyond the generic Entity types
 
 # EMR
 ## EMR cluster 
