@@ -55,13 +55,17 @@ Note these are my own personal notes and are a work in progress as I study towar
     * S3
     * Athena
     * Redshift
-    * Lake formation
-    * SageMaker Feature Store
-    * JDBC (Databricks, Saas)
-  * Outputs (via a notebook)
-    * SageMaker Processing
-    * SageMaker Pipelines
-    * SageMaker Feature Store
+    * EMR
+    * Lake formation (via Athena or AWS SDK awswrangler lib)
+    * SM Feature Store
+    * 3rd party sources (eg: Databricks, Snowflake Saas)
+  * Outputs
+    * S3
+    * SM Processing
+    * SM Pipelines
+    * SM Feature Store
+    * Autopilot
+    * As a jupyter notebook
   * Does not integrate with DynamoDB
 
 ### SM Data Wrangler versus AWS Glue
