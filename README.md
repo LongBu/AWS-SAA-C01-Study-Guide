@@ -110,7 +110,7 @@ Note these are my own personal notes and are a work in progress as I study towar
 ### XG boost
   * highly imbalanced data 
 ### Linear Learner
-  * most effective approach to establish a simple, interpretable CLV projector in Sage maker
+  * most effective approach to establish a simple, interpretable performance baseline to evaluate against more complex models in SM utilizing the same data
 
 ### linear learner versus XGBoost per class imbalance
 
@@ -180,6 +180,9 @@ Note these are my own personal notes and are a work in progress as I study towar
     * JDBC (RDS, Redshift)
     * Glue Data Catalog
 # Miscellaneous
+
+## Load Balancers
+  * Need both port 443 and 80 to be open with the latter being redirected to the former if enabled by the attachmment of an SSL certificate to the LB to allow the termination of HTTPS connections and thus serve secure content
 
 ## AWS Batch
   * Better matched over SM Batch jobs for extremely large, compute-intensive/high performance/scalable batch workloads 
