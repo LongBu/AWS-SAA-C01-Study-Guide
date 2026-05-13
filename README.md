@@ -189,8 +189,13 @@ Note these are my own personal notes and are a work in progress as I study towar
 
 ## S3
 
-### standard versus intelligent tearing
+### Standard
+  * provides low-latency, high throughput, optimized for frequent access (eg: for training or inference)
 
+### Intelligent Tiering
+  * optimizes costs for infrequently accessed data
+  * not ideal for datasets that need low-latency (eg: for training or inference)
+  
 ## Database
 
 ### Redshift
