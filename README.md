@@ -71,6 +71,13 @@ Note these are my own personal notes and are a work in progress as I study towar
 
 ### SM Data Wrangler versus AWS Glue
 
+## Multi-Model Endpoints
+  * available via SM
+  * host multiple models on a single endpoint
+  * single container and instance fleet, which might have varying degrees of usage (infrequent to frequent) to dynamically load models on demand
+  * reduces cost
+  * improves resource utilization (reduce per-model overhead, optimize memory usage)
+
 ## SM Categories of built-in algorithm:
   * supervised
   * unsupervised
@@ -267,6 +274,10 @@ Note these are my own personal notes and are a work in progress as I study towar
 ### Schedule versus target tracking
 
 ## EC2 type suitability
+
+### Reserved Instances
+  * Best suited for steady state workloads (prod)
+  * Lack flexibility to handle unpredicatable/varying trafflic load
 
 ## Ensemble Learning
 
