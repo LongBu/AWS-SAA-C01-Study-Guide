@@ -30,11 +30,13 @@ Note these are my own personal notes and are a work in progress as I study towar
 
 
 # Sagemaker (SM)
-## SM pipeline
+## SM Pipeline
   * name, steps, and parameters
   * designed to be scalable up to tens of thousands of ML workflows
 
-## SM feature store 
+## SM Feature Store 
+  * stores versions
+  * serves features for both training and real-time inference, ensuring feature consistency and lineage
   * off-line versus online
     
 ## SM script mode
@@ -50,8 +52,8 @@ Note these are my own personal notes and are a work in progress as I study towar
   * Doesn't provide comprehensive data preparation and transformations (if needed, use Data Wrangler)
 
 ## SM Data Wrangler
-  * Provide comprehensive data preparation and transformations
-  * Offers easy to use visual interface for data prep (e.g. cleaning transforming analyzing data) which is ideal for limited code use experience
+  * Provide comprehensive data preparation and (prebuilt) transformations
+  * Offers easy to use visual interface for data prep (e.g. cleaning transforming analyzing data) which is ideal for limited, low code use experience
   * Inputs
     * S3
     * Athena
@@ -70,6 +72,8 @@ Note these are my own personal notes and are a work in progress as I study towar
   * Does not integrate with DynamoDB
 
 ### SM Data Wrangler versus AWS Glue
+  * Both are great for ETL
+  * SM Data Wrangler more efficient when integrating with SM (eg: ETL=>SM Feature Store)
 
 ## Multi-Model Endpoints
   * available via SM
@@ -221,6 +225,9 @@ Note these are my own personal notes and are a work in progress as I study towar
 ## Catastrophic forgetting: when NNs abruptly lose previously learned information when trained on new, sequential data
 
 ## Feature selection versus model regularization
+  * Model regularization does not directly select or remove input features
+  * Model regularization reduces overfitting by penalizing model complexity
+  * Feature selection systematically identifies and retains the most predictive features, while discarding irrelevant/redudant features to reduce model complexity to improve accuracy
 
 ## L1 (LASSO) vs L2 (Ridge) Regularization
   * Preventing overfitting in ML in general
