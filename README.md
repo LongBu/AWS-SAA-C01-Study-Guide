@@ -271,7 +271,13 @@ Note these are my own personal notes and are a work in progress as I study towar
 
 ## EC2 Autoscaling
 
-### Schedule versus target tracking
+### Scaling Policy
+
+#### Scheduled Scaling
+  * Works well for predictable traffice, but can't react to spikes or drops
+
+#### Target Tracking Scaling
+  * Continuously monitors metric(s) to adjust capacity up or down in accordance in real-time ensuring optimal performance
 
 ## EC2 type suitability
 
