@@ -290,6 +290,7 @@ Note these are my own personal notes and are a work in progress as I study towar
 
 #### Target Tracking Scaling
   * Continuously monitors metric(s) to adjust capacity up or down in accordance in real-time ensuring optimal performance
+  * If maintaining low latency, track latency and request throughput (concurrency) to ensure low-latency predictions so as to autoscale and maintain availability to maintain optimal performance
 
 ## EC2 type suitability
 
