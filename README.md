@@ -119,14 +119,13 @@ Note these are my own personal notes and are a work in progress as I study towar
   * Neither: Reinforcement Learning
 
 ### Image classification
-### XG boost
+### XGBoost
   * Effective at working with highly imbalanced data
   * Provides a strong balance between accuracy and traceability of feature importance and how it influences predictions (much the case for other Tree-based algorithms)
 
 ### Linear Learner
   * most effective approach to establish a simple, interpretable performance baseline to evaluate against more complex models in SM utilizing the same data
-
-### linear learner versus XGBoost per class imbalance
+  * Effective at training with highly (class) imbalanced data, which can be mitigated by either the 'balance_multiclass_weights' or 'class_weights' hyperparameters.  This is more apropos over XGBoost if per class weighting is the ask.  
 
 # Data mesh architecture
   * data as a product with the decentralized data ownership and domain oriented architecture
