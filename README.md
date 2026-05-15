@@ -257,16 +257,23 @@ Note these are my own personal notes and are a work in progress as I study towar
 
 # model overfitting
   * training and validation loss curves over time: if validation loss much higher than training loss-> model overfitting
-##AWS CodePipeline
-  * fully managed continuous delivery (CD) service that automates software release processes for fast and reliable updates
+
+## AWS CodePipeline
+  * fully managed continuous delivery (CD) service that automates software release processes (building/testing/deployment) for fast and reliable updates
+  * does not offer automated quality checks on models
+
+## AWS CodeBuild
+  * a fully managed continuous integration service that compiles source code, runs tests, and produces ready-to-deploy software packages
+  * utilizes Docker images that handles all dependencies/libraries for model training and testing
+  * does not offer automated quality checks on models
+
+## AWS CloudFormation
+  * utilized to define CI/CD IaC for easy management, versioning and replication
 
 ## Docker
 
 ## Athena
   * partition projection
-
-## AWS CodeBuild
-  * a fully managed continuous integration service that compiles source code, runs tests, and produces ready-to-deploy software packages
 
 ## Blue/Green Deployments
   * Allows safe rollouts with instant rollback if problems encountered
