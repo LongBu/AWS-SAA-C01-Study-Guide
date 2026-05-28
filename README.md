@@ -309,17 +309,29 @@ Note these are my own personal notes and are a work in progress as I study towar
 
 ## EC2 Type suitability
 
+### -G4DN (Nvidia T4 GPUs) 
+  * provide modest power and cost savings but P3 or P4 is better for computer/low latency needs
+
+### Inf1 
+  * purposely built for high throughput, low latency inference
+
+
+### M5
+  * provide balanced resources, but lacks specialized GPU(s) necessary for efficient training of ML models
+
+### P3 (Nvidia v100 GPUs)
+  * offer powerful GPU that significantly reduces training time and improves computational performance for ML workload (eg: low latency inference)
+
+### P4 (Nvidia A100 GPUs) 
+  * offer massive compute/memory bandwidth
+
 ### R5
   * instances optimized for memory intensive applications, but lacks GPU(s), which is essential for efficient ML training
 
 ### T2
   * provides burst CPU performance, but not suitable for compute intensive tasks like ML model training, due to limited CPU and lack of GPU(s)
 
-### M5
-  * provide balanced resources, but lacks specialized GPU(s) necessary for efficient training of ML models
 
-### P3
-  * offer powerful GPU that significantly reduces training time and improves computational performance for ML workload (eg: inference)
 
 ## Ensemble Learning
 
