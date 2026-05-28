@@ -52,7 +52,7 @@ Note these are my own personal notes and are a work in progress as I study towar
   * Doesn't provide comprehensive data preparation and transformations (if needed, use Data Wrangler)
 
 ## SM Data Wrangler
-  * Provide comprehensive data preparation and (prebuilt) transformations
+  * Provide comprehensive data preparation and (prebuilt) transformations (eg: (cleaning normalizing, text tokenization)
   * Offers easy to use visual interface for data prep (e.g. cleaning transforming analyzing data) which is ideal for limited, low code use experience
   * Inputs
     * S3
@@ -203,6 +203,7 @@ Note these are my own personal notes and are a work in progress as I study towar
 
 # AWS Glue
   * glue partitioning aids parallel processing and boosts query performance
+  * Glue DataBrew offers imputing missing values, standardized formatting, region specific cleaning rules, which ensures data quality before a model processes the input(s)
   * Inputs:
     * Aurora
     * Postgres, Redshift, SqlServer, Oracle, MySql (JDBC datastores) (RDS based or otherwise)
@@ -218,6 +219,7 @@ Note these are my own personal notes and are a work in progress as I study towar
     * S3
     * JDBC (RDS, Redshift)
     * Glue Data Catalog
+   
 # Miscellaneous
 
 ## Load Balancers
@@ -254,8 +256,8 @@ Note these are my own personal notes and are a work in progress as I study towar
 ##R^2 (the coefficient of determination)
   * Indicate how much variance in the target (dependent) variable is explained by the independent variables of the model
 
-# model overfitting
-  * training and validation loss curves over time: if validation loss much higher than training loss-> model overfitting
+# Model Overfitting
+  * Compare training and validation loss curves over time: if validation loss much higher than training loss-> model overfitting
 
 ## AWS CodePipeline
   * fully managed continuous delivery (CD) service that automates software release processes (building/testing/deployment) for fast and reliable updates
@@ -298,11 +300,25 @@ Note these are my own personal notes and are a work in progress as I study towar
   * Continuously monitors metric(s) to adjust capacity up or down in accordance in real-time ensuring optimal performance
   * If maintaining low latency, track latency and request throughput (concurrency) to ensure low-latency predictions so as to autoscale and maintain availability to maintain optimal performance
 
-## EC2 type suitability
+## EC2 Pricing Options suitability
 
 ### Reserved Instances
   * Best suited for steady state workloads (prod)
   * Lack flexibility to handle unpredicatable/varying trafflic load
+
+## EC2 Type suitability
+
+### R5
+  * instances optimized for memory intensive applications, but lacks GPU(s), which is essential for efficient ML training
+
+### T2
+  * provides burst CPU performance, but not suitable for compute intensive tasks like ML model training, due to limited CPU and lack of GPU(s)
+
+### M5
+  * provide balanced resources, but lacks specialized GPU(s) necessary for efficient training of ML models
+
+### P3
+  * offer powerful GPU that significantly reduces training time and improves computational performance for ML workload (eg: inference)
 
 ## Ensemble Learning
 
@@ -318,6 +334,7 @@ Note these are my own personal notes and are a work in progress as I study towar
 # Amazon Translate
   * If small volumes of data, orchestrate via Lambda (15 minute limit)
   * If large volumes of data, orchestrate via step functions (up to 1 year limit)
+  * can normalize language, but can't address formatting, noise, missing Fields.  Look to glue and data Wrangler for cleaning and normalization
 
 # Shortcuts
   * 'manually' is usually a tell to not use the premise (eg: CPU/memory scaling doesn't necessarily help with manually scaled)
