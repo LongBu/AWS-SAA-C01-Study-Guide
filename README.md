@@ -184,7 +184,8 @@ Note these are my own personal notes and are a work in progress as I study towar
   * file storage
 
 ## FSX 
-  * Mount versus linked
+  * Lustre mounted/linked with S3 bucket with fast file mode enabled is optimal for efficient on demand streaming of large (video) files.  Fast file mode in S3 enable streaming without fully downloading large files, reducing storage and overhead.
+  * Mounting is good, but more apt for performance, Fast file mode is key
 
 ## S3
 
