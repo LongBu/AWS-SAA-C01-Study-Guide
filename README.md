@@ -223,6 +223,9 @@ Note these are my own personal notes and are a work in progress as I study towar
    
 # Miscellaneous
 
+## KMS
+  * CMK provides full control over policies and grants, automated key rotation, and integrate with cloud trail to record all cryptographic operations for auditing purposes
+
 ## Load Balancers
   * Need both port 443 and 80 to be open with the latter being redirected to the former if enabled by the attachmment of an SSL certificate to the LB to allow the termination of HTTPS connections and thus serve secure content
 
@@ -331,8 +334,6 @@ Note these are my own personal notes and are a work in progress as I study towar
 ### T2
   * provides burst CPU performance, but not suitable for compute intensive tasks like ML model training, due to limited CPU and lack of GPU(s)
 
-
-
 ## Ensemble Learning
 
 ### (Model) Stacking
@@ -348,6 +349,9 @@ Note these are my own personal notes and are a work in progress as I study towar
   * If small volumes of data, orchestrate via Lambda (15 minute limit)
   * If large volumes of data, orchestrate via step functions (up to 1 year limit)
   * can normalize language, but can't address formatting, noise, missing Fields.  Look to glue and data Wrangler for cleaning and normalization
+
+# AWS Macie
+  * Discover and classify sensitive data
 
 # Shortcuts
   * 'manually' is usually a tell to not use the premise (eg: CPU/memory scaling doesn't necessarily help with manually scaled)
