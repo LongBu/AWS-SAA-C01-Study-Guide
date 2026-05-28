@@ -242,7 +242,7 @@ Note these are my own personal notes and are a work in progress as I study towar
 ## L1 (LASSO) vs L2 (Ridge) Regularization
   * Preventing overfitting in ML in general
   * A regularization term is added as weights are learned
-  * L1 term is the sum of the values of the weights as a penalty to the model's loss function
+  * L1 term is the sum of the absolute values of the weights as a penalty to the model's loss function
     * Performs feature selection - entire features go to O
     * Computationally inefficient
     * Sparse output
