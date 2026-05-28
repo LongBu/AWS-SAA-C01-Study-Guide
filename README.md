@@ -257,7 +257,8 @@ Note these are my own personal notes and are a work in progress as I study towar
     * Computationally efficient
     * Dense output
   * Same idea can be applied to loss functions and/or weights as learned
-##R^2 (the coefficient of determination)
+
+## R^2 (the coefficient of determination)
   * Indicate how much variance in the target (dependent) variable is explained by the independent variables of the model
 
 # Model Overfitting
