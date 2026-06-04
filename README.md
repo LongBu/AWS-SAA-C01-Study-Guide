@@ -339,6 +339,7 @@ Note these are my own personal notes and are a work in progress as I study towar
 
 ### (Model) Stacking
   * Ensemble learning technique that combines more that one model through a meta-model that optimally weights/integrates the base learners to improve predictive performance at the expense of interpretability
+  * Captures complimentary information from the input models to result in more accurate/results
 
 ### Bagging
   * Trains multiple instances of the same algorithm on bootstrapped samples and averages these predictions to reduce variance (eg: Random Forest)
