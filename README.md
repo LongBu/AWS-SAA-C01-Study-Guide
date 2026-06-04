@@ -232,7 +232,12 @@ Note these are my own personal notes and are a work in progress as I study towar
 ## AWS Batch
   * Better matched over SM Batch jobs for extremely large, compute-intensive/high performance/scalable batch workloads 
 
-## Catastrophic forgetting: when NNs abruptly lose previously learned information when trained on new, sequential data
+## Catastrophic forgetting: 
+  * when NNs abruptly lose previously learned information when trained on new, sequential data
+  * Continual learning methods such as rehearsal or elastic weight consolidation can help model retention of previous knowledge
+
+## Early Stopping
+  * Stops training when validation metric degrades, preventing overfitting
 
 ## Feature selection versus model regularization
   * Model regularization does not directly select or remove input features
