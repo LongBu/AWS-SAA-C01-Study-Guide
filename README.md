@@ -282,7 +282,7 @@ Note these are my own personal notes and are a work in progress as I study towar
   * partition projection
 
 ## Blue/Green Deployments
-  * Allows safe rollouts with instant rollback if problems encountered
+  * Allows safe rollouts with instant rollback (provides HA) if problems encountered
   * Variants:
     * All at once: shift everything, monitor, terminate blue fleet
     * Canary: shift a small portion of traffic and monitor
