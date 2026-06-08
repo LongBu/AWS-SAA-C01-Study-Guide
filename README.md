@@ -225,6 +225,8 @@ Note these are my own personal notes and are a work in progress as I study towar
 
 ## KMS
   * CMK provides full control over policies and grants, automated key rotation, and integrate with cloud trail to record all cryptographic operations for auditing purposes
+  * AWS managed keys (AWS owned or AWS-managed CMKs) do not allow custom key policies or rotation schedules
+  * Cloudtrail records all KMS API/operations for the sake of auditing (Cloudwatch isn't designed for this)
 
 ## Load Balancers
   * Need both port 443 and 80 to be open with the latter being redirected to the former if enabled by the attachmment of an SSL certificate to the LB to allow the termination of HTTPS connections and thus serve secure content
