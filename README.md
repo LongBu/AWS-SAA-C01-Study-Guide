@@ -171,6 +171,13 @@ Note these are my own personal notes and are a work in progress as I study towar
       * Entity types include: COMMERCIAL_ITEM, DATE, EVENT, LOCATION, ORGANIZATION, OTHER, PERSON, QUANTITY, TITLE
       * Creating a Custom entity recognizer/recognition model can extend beyond the generic Entity types
 
+## Amazon Textract
+  * AnalyzeDocument API with the FORMS feature designed to identify and return structured data such as key-value pairs and tables from documents (eg: invoices and receipts)
+
+## Amazon Rekognition
+  * Specializes in Image Analysis (eg: label detection, faces, and objects)
+  * Doesn't provide document structure extration
+
 # EMR
 ## EMR cluster 
   * can use instance store for ephemeral/transient, cost-effective storage of temporary data
