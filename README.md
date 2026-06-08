@@ -172,6 +172,7 @@ Note these are my own personal notes and are a work in progress as I study towar
       * Creating a Custom entity recognizer/recognition model can extend beyond the generic Entity types
 
 ## Amazon Textract
+  * Extracts text, handwriting, and structured data from scanned documents including forms/tables
   * AnalyzeDocument API with the FORMS feature designed to identify and return structured data such as key-value pairs and tables from documents (eg: invoices and receipts)
 
 ## Amazon Rekognition
