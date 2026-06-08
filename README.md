@@ -318,8 +318,8 @@ Note these are my own personal notes and are a work in progress as I study towar
 
 ## EC2 Type suitability
 
-### -G4DN (Nvidia T4 GPUs) 
-  * provide modest power and cost savings but P3 or P4 is better for computer/low latency needs
+### G4DN (Nvidia T4 GPUs) 
+  * provide modest power and cost savings but P3 or P4 is better for compute/low latency needs
 
 ### Inf1 
   * purposely built for high throughput, low latency inference
