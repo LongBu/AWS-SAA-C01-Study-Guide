@@ -199,7 +199,9 @@ Note these are my own personal notes and are a work in progress as I study towar
 ## Database
 
 ### Redshift
-  * data warehousing
+  * If anything to do with data warehousing seen in the question, start considering Redshift to be part of the solution
+  * Massive Parallel Processing (MPP) available for fast data aggregation, scoring and querying
+  * Tight integration with SM
 
 
 # AWS Glue
