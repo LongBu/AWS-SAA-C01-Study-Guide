@@ -119,6 +119,15 @@ Note these are my own personal notes and are a work in progress as I study towar
   * Neither: Reinforcement Learning
 
 ### Image classification
+  * Assign one or more labels to an image
+  * Not as well suited to detect multiple objects in an image as Object Detection, due to the lack of placement context
+
+### Object Detection
+  * Identify/Locate all objects in an image with bounding boxes
+
+### Semantic Segmentation
+  * Pixel-level object classification
+
 ### XGBoost
   * Effective at working with highly imbalanced data
   * Provides a strong balance between accuracy and traceability of feature importance and how it influences predictions (much the case for other Tree-based algorithms)
