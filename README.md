@@ -69,6 +69,10 @@ Note these are my own personal notes and are a work in progress as I study towar
     * SM Feature Store
     * Autopilot
     * As a jupyter notebook
+    * 3rd party external destinations
+    * Amazon Personalize
+    * Athena
+    * Redshift
   * Does not integrate with DynamoDB
 
 ### SM Data Wrangler versus AWS Glue
@@ -227,7 +231,7 @@ Note these are my own personal notes and are a work in progress as I study towar
   * Inputs:
     * Aurora
     * Postgres, Redshift, SqlServer, Oracle, MySql (JDBC datastores) (RDS based or otherwise)
-    * dynamodb
+    * Dynamodb
     * mongodb/documentdb
     * Kinesis Data Streams
     * Kafka/Amazon Managed Streaming for Apache Kafka
@@ -376,7 +380,7 @@ Note these are my own personal notes and are a work in progress as I study towar
 # Amazon Translate
   * If small volumes of data, orchestrate via Lambda (15 minute limit)
   * If large volumes of data, orchestrate via step functions (up to 1 year limit)
-  * Can normalize language, but can't address formatting, noise, missing fields.  Look to glue and data Wrangler for cleaning and normalization
+  * Can normalize language, but can't address formatting, noise, missing fields.  Look to glue and Data Wrangler for cleaning and normalization
 
 # AWS Macie
   * Discover and classify sensitive data
