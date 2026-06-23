@@ -342,13 +342,15 @@ Note these are my own personal notes and are a work in progress as I study towar
   * Lack flexibility to handle unpredicatable/varying trafflic load
 
 ## EC2 Type suitability
+  * General note:
+    * CPU-based instances are more cost-effective for development/testing purposes, but will have higher latency (eg: production usage)
+    * GPU-based instances are less cost-effective for development/testing purposes, but will have lower latency (eg: production usage)
 
 ### G4DN (Nvidia T4 GPUs) 
   * provide modest power and cost savings but P3 or P4 is better for compute/low latency needs
 
 ### Inf1 
   * purposely built for high throughput, low latency inference
-
 
 ### M5
   * provide balanced resources, but lacks specialized GPU(s) necessary for efficient training of ML models
