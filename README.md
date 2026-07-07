@@ -163,12 +163,20 @@ Note these are my own personal notes and are a work in progress as I study towar
 ## Amazon firehose
   * designed to deliver streaming data into AWS services (eg: S3, Redshift)
 
+## Amazon Transcribe 
+  * speech (audio) to text
+  * supports custom vocabularies for improved transcription
+  * integrates seamlessly with s3
+  * scalable and cost-efficient processing
+
 ## Amazon Comprehend (Medical):
   * Serverless NLP service harnessing NLP to uncover valuable insights and connections in text analytics
   * Easier to implement than an NLP model from the ground up
   * Medical version detects PHI via DetectPHI API
+  * analyzes only text data (eg: can't process audio/video/pictures)
   * Input social media, emails, web pages, documents, transcripts, medical records (Comprehend Medical)
   * PII Identification & Redaction
+  * Doesn't offer semantic search or vector embedding (look to Kendra for this)
   * Targeted sentiment (for specific entities)
   * Can train on your own data
   * Can integrate with S3, Firehose, Lambda, Lex (eg realtime sentiment analysis), KMS, etc.
@@ -188,6 +196,16 @@ Note these are my own personal notes and are a work in progress as I study towar
   * Extracts text, handwriting, and structured data from scanned documents including forms/tables
   * AnalyzeDocument API with the FORMS feature designed to identify and return structured data such as key-value pairs and tables from documents (eg: invoices and receipts)
 
+## Amazon Kendra
+  * fully managed
+  * intelligent search service
+  * utilizes vector embeddings allowing hybrid search (keywords and vector searches), but doesn't offer vector database support.  A vector database being a specialized database for storing and querying vector embeddings (numerical representations of data) to perform similarity or nearest-neighbor searches.
+  * supports:
+    * semantic search: understands user intent and contextual meaning rather than relying solely on keyword matching, improving relevance in information retrieval
+    * natural language queries
+  * integrates natively with s3
+  * indexes docs so as to provide efficient retrieval of relevant content
+
 ## Amazon Rekognition
   * Specializes in Image Analysis (eg: label detection, faces, and objects)
   * Doesn't provide document structure extration
@@ -206,6 +224,7 @@ Note these are my own personal notes and are a work in progress as I study towar
 
 ## FSX 
   * Lustre mounted/linked with S3 bucket with fast file mode enabled is optimal for efficient on demand streaming of large (video) files.  Fast file mode in S3 enable streaming without fully downloading large files, reducing storage and overhead.
+  * Only FSx for Lustre can be mounted directly for SM training jobs (eg: FSx for NetApp ONTAP cannot be mounted directly as a volume in SageMaker training jobs), so if not Lustre based, copy to S3
   * Mounting is good, but more apt for performance, Fast file mode is key
 
 ## S3
@@ -244,12 +263,28 @@ Note these are my own personal notes and are a work in progress as I study towar
     * JDBC (RDS, Redshift)
     * Glue Data Catalog
    
+## AWS Glue Data Catalog
+  * Central metadata repository storing schema definitions and table information for data across AWS analytics services.
+  * supports tagging
+  * IAM policies do not provide fine-grained access control for data at this level in Athena queries (look to Lake Formation for this sort of thing)
+
+# AWS Lake Formation
+  * Managed service that simplifies the creation, security, and management of data lakes with fine-grained access control and centralized governance.
+  * Can assign tags to datasets
+  * Can define Lake Formation permissions based on those tags. 
+  * Assign analysts specific tags for their roles.
+
 # Miscellaneous
 
 ## KMS
   * CMK provides full control over policies and grants, automated key rotation, and integrate with CloudTrail to record all cryptographic operations for auditing purposes
   * AWS managed keys (AWS owned or AWS-managed CMKs) do not allow custom key policies or rotation schedules
   * CloudTrail records all KMS API/operations for the sake of auditing (CloudWatch isn't designed for this)
+
+## AWS Secrets Manager
+  * Managed Rotation in AWS Secrets Manager is primarily designed for database credentials
+  * Does not support automatic rotation of arbitrary API tokens, though it can securely store them
+  * For API tokens, look to a Lambda to automate token rotation on a schedule (eg: every 90 days)
 
 ## Load Balancers
   * Need both port 443 and 80 to be open with the latter being redirected to the former if enabled by the attachmment of an SSL certificate to the LB to allow the termination of HTTPS connections and thus serve secure content
@@ -367,16 +402,24 @@ Note these are my own personal notes and are a work in progress as I study towar
 ### T2
   * provides burst CPU performance, but not suitable for compute intensive tasks like ML model training, due to limited CPU and lack of GPU(s)
 
-## Ensemble Learning
+# Exploratory Data Analysis (EDA) 
+  * used to understand data distributions
+  * address missing values
+  * assess the class imbalance before determining if an ML solution is feasible.
+ 
+# Oversampling
+  * should not be applied before conducting EDA to understand data quality, distribution (eg: class imbalance), and missing values.
 
-### (Model) Stacking
+# Ensemble Learning
+
+## (Model) Stacking
   * Ensemble learning technique that combines more that one model through a meta-model that optimally weights/integrates the base learners to improve predictive performance at the expense of interpretability
   * Captures complimentary information from the input models to result in more accurate/results
 
-### Bagging
+## Bagging
   * Trains multiple instances of the same algorithm on bootstrapped samples and averages these predictions to reduce variance (eg: Random Forest)
 
-### Voting Ensemble
+## Voting Ensemble
   * Simple aggregation technique where multiple models vote (greatest result for classification and average for regression) without learning optimal weights or relationships
 
 # Amazon Translate
