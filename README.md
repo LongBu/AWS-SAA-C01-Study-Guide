@@ -164,10 +164,10 @@ Note these are my own personal notes and are a work in progress as I study towar
   * designed to deliver streaming data into AWS services (eg: S3, Redshift)
 
 ## Amazon Transcribe 
-  * speech (audio) to text
-  * supports custom vocabularies for improved transcription
-  * integrates seamlessly with s3
-  * scalable and cost-efficient processing
+  * speech (audio) to text
+  * supports custom vocabularies for improved transcription
+  * integrates seamlessly with s3
+  * scalable and cost-efficient processing
 
 ## Amazon Comprehend (Medical):
   * Serverless NLP service harnessing NLP to uncover valuable insights and connections in text analytics
