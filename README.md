@@ -197,14 +197,14 @@ Note these are my own personal notes and are a work in progress as I study towar
   * AnalyzeDocument API with the FORMS feature designed to identify and return structured data such as key-value pairs and tables from documents (eg: invoices and receipts)
 
 ## Amazon Kendra
-  * fully managed
-  * intelligent search service
-  * utilizes vector embeddings allowing hybrid search (keywords and vector searches), but doesn't offer vector database support.  A vector database being a specialized database for storing and querying vector embeddings (numerical representations of data) to perform similarity or nearest-neighbor searches.
-  * supports:
-    * semantic search: understands user intent and contextual meaning rather than relying solely on keyword matching, improving relevance in information retrieval
-    * natural language queries
-  * integrates natively with s3
-  * indexes docs so as to provide efficient retrieval of relevant content
+  * fully managed
+  * intelligent search service
+  * utilizes vector embeddings allowing hybrid search (keywords and vector searches), but doesn't offer vector database support.  A vector database being a specialized database for storing and querying vector embeddings (numerical representations of data) to perform similarity or nearest-neighbor searches.
+  * supports:
+    * semantic search: understands user intent and contextual meaning rather than relying solely on keyword matching, improving relevance in information retrieval
+    * natural language queries
+  * integrates natively with s3
+  * indexes docs so as to provide efficient retrieval of relevant content
 
 ## Amazon Rekognition
   * Specializes in Image Analysis (eg: label detection, faces, and objects)
@@ -264,15 +264,15 @@ Note these are my own personal notes and are a work in progress as I study towar
     * Glue Data Catalog
    
 ## AWS Glue Data Catalog
-  * Central metadata repository storing schema definitions and table information for data across AWS analytics services.
-  * supports tagging
-  * IAM policies do not provide fine-grained access control for data at this level in Athena queries (look to Lake Formation for this sort of thing)
+  * Central metadata repository storing schema definitions and table information for data across AWS analytics services.
+  * supports tagging
+  * IAM policies do not provide fine-grained access control for data at this level in Athena queries (look to Lake Formation for this sort of thing)
 
 # AWS Lake Formation
-  * Managed service that simplifies the creation, security, and management of data lakes with fine-grained access control and centralized governance.
-  * Can assign tags to datasets
-  * Can define Lake Formation permissions based on those tags. 
-  * Assign analysts specific tags for their roles.
+  * Managed service that simplifies the creation, security, and management of data lakes with fine-grained access control and centralized governance.
+  * Can assign tags to datasets
+  * Can define Lake Formation permissions based on those tags.
+  * Assign analysts specific tags for their roles.
 
 # Miscellaneous
 
@@ -282,9 +282,9 @@ Note these are my own personal notes and are a work in progress as I study towar
   * CloudTrail records all KMS API/operations for the sake of auditing (CloudWatch isn't designed for this)
 
 ## AWS Secrets Manager
-  * Managed Rotation in AWS Secrets Manager is primarily designed for database credentials
-  * Does not support automatic rotation of arbitrary API tokens, though it can securely store them
-  * For API tokens, look to a Lambda to automate token rotation on a schedule (eg: every 90 days)
+  * Managed Rotation in AWS Secrets Manager is primarily designed for database credentials
+  * Does not support automatic rotation of arbitrary API tokens, though it can securely store them
+  * For API tokens, look to a Lambda to automate token rotation on a schedule (eg: every 90 days)
 
 ## Load Balancers
   * Need both port 443 and 80 to be open with the latter being redirected to the former if enabled by the attachmment of an SSL certificate to the LB to allow the termination of HTTPS connections and thus serve secure content
@@ -403,12 +403,12 @@ Note these are my own personal notes and are a work in progress as I study towar
   * provides burst CPU performance, but not suitable for compute intensive tasks like ML model training, due to limited CPU and lack of GPU(s)
 
 # Exploratory Data Analysis (EDA) 
-  * used to understand data distributions
-  * address missing values
-  * assess the class imbalance before determining if an ML solution is feasible.
+  * used to understand data distributions
+  * address missing values
+  * assess the class imbalance before determining if an ML solution is feasible.
  
 # Oversampling
-  * should not be applied before conducting EDA to understand data quality, distribution (eg: class imbalance), and missing values.
+  * should not be applied before conducting EDA to understand data quality, distribution (eg: class imbalance), and missing values.
 
 # Ensemble Learning
 
