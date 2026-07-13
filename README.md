@@ -326,6 +326,40 @@ Note these are my own personal notes and are a work in progress as I study towar
 ## R^2 (the coefficient of determination)
   * Indicate how much variance in the target (dependent) variable is explained by the independent variables of the model
 
+## Recall:
+  * TP/(TP + FN) = TP/P
+  * useful evaluation metric to reduce the risk of false negatives
+  * precision and recall are the most appropriate metrics for tuning and monitoring a loan default model
+
+## Accuracy:
+  * (TP + TN)/(TP + FP + TN + FN)
+  * not reliable in imbalanced datasets because it does not distinguish between false positives and false negatives
+  * ratio of correct predictions, which may be misleading with imbalanced classes
+
+## F1 Score: 
+  * 2TP/(2TP + FP + FN) = 2 * (Precision * Recall)/(Precision+Recall)
+  * useful to balance precision and recall, but both are more directly aligned with the target objective, true positives (eg: default/fraud/etc.).
+  * harmonic mean of precision and recall—used when a balance between the two is needed.
+
+## AUC/ROC: 
+  * Useful metric for understanding performance across thresholds and imbalanced datasets. 
+  * Does not directly capture the trade-off between false positives and false negatives
+  * Measures a model’s ability to distinguish between classes by plotting true positive rate vs. false positive rate across thresholds.
+
+## Precision:
+  * TP/(TP + FP)
+  * useful evaluation metric to reduce the risk of false positives
+  * precision and recall are the most appropriate metrics for tuning and monitoring a loan default model
+
+## Specificity:
+  * TN/(TN + FP) = TN/N
+  * Less relevant when primary concern is identifying True Positives and avoiding False Negatives (better suited for precision and recall)
+  * The proportion of true negatives correctly identified—focuses on minimizing false positives in some contexts.
+
+## Model Monitor job or CloudWatch alerts
+  * continuously track precision and recall. If a drop in recall is detected, indicating increased financial risk, the pipeline can trigger a retraining step using updated customer behavior data.
+
+
 # Model Overfitting
   * Compare training and validation loss curves over time: if validation loss much higher than training loss-> model overfitting
 
