@@ -136,9 +136,19 @@ Note these are my own personal notes and are a work in progress as I study towar
   * Effective at working with highly imbalanced data
   * Provides a strong balance between accuracy and traceability of feature importance and how it influences predictions (much the case for other Tree-based algorithms)
 
+### Decision Tree Regression 
+  * predicts continuous values
+ 
+### Classification Trees 
+  * used for binary classification.
+
 ### Linear Learner
+  * predicts continuous numerical outcomes and is not appropriate for binary classification tasks.
   * most effective approach to establish a simple, interpretable performance baseline to evaluate against more complex models in SM utilizing the same data
-  * Effective at training with highly (class) imbalanced data, which can be mitigated by either the 'balance_multiclass_weights' or 'class_weights' hyperparameters.  This is more apropos over XGBoost if per class weighting is the ask.  
+  * Effective at training with highly (class) imbalanced data, which can be mitigated by either the 'balance_multiclass_weights' or 'class_weights' hyperparameters.  This is more apropos over XGBoost if per class weighting is the ask.
+
+### Logistic regression
+statistical method designed for binary classification problems
 
 # Data mesh architecture
   * data as a product with the decentralized data ownership and domain oriented architecture
