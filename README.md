@@ -51,33 +51,8 @@ Note these are my own personal notes and are a work in progress as I study towar
   * Service for non-coders to build models
   * Doesn't provide comprehensive data preparation and transformations (if needed, use Data Wrangler)
 
-## SM Data Wrangler
-  * Provide comprehensive data preparation and (prebuilt) transformations (eg: (cleaning normalizing, text tokenization)
-  * Offers easy to use visual interface for data prep (e.g. cleaning transforming analyzing data) which is ideal for limited, low code use experience
-  * Inputs
-    * S3
-    * Athena
-    * Redshift
-    * EMR
-    * Lake formation (via Athena or AWS SDK awswrangler lib)
-    * SM Feature Store
-    * 3rd party sources (eg: Databricks, Snowflake Saas)
-  * Outputs
-    * S3
-    * SM Processing
-    * SM Pipelines
-    * SM Feature Store
-    * Autopilot
-    * As a jupyter notebook
-    * 3rd party external destinations
-    * Amazon Personalize
-    * Athena
-    * Redshift
-  * Does not integrate with DynamoDB
-
-### SM Data Wrangler versus AWS Glue
-  * Both are great for ETL
-  * SM Data Wrangler more efficient when integrating with SM (eg: ETL=>SM Feature Store)
+## SM Clarify
+  * A tool for detecting bias and explaining model predictions, ensuring fairness and transparency in machine learning models.
 
 ## Multi-Model Endpoints
   * available via SM
@@ -221,6 +196,9 @@ statistical method designed for binary classification problems
   * Doesn't provide document structure extration
 
 # EMR
+  * Big data platform that runs Spark, Hadoop and Presto for large scale data processing/transformations with full control over cluster configuration and resource management.
+  * integrates well with Amazon SageMaker Studio, facilitating seamless preprocessing within ML pipelines.
+
 ## EMR cluster 
   * can use instance store for ephemeral/transient, cost-effective storage of temporary data
 ## EMR serverless
@@ -253,8 +231,9 @@ statistical method designed for binary classification problems
   * Massive Parallel Processing (MPP) available for fast data aggregation, scoring and querying
   * Tight integration with SM
 
-
 # AWS Glue
+  * serverless ETL service that uses Apache Spark under the hood and is suitable for scalable data transformations
+  * can be used to apply custom masking transformations on sensitive fields in tabular data, preserving the dataset's structure and order for downstream use
   * glue partitioning aids parallel processing and boosts query performance
   * Glue DataBrew offers imputing missing values, standardized formatting, region specific cleaning rules, which ensures data quality before a model processes the input(s)
   * Inputs:
@@ -277,6 +256,37 @@ statistical method designed for binary classification problems
   * Central metadata repository storing schema definitions and table information for data across AWS analytics services.
   * supports tagging
   * IAM policies do not provide fine-grained access control for data at this level in Athena queries (look to Lake Formation for this sort of thing)
+
+## SM Data Wrangler
+  * Provide comprehensive data preparation and (prebuilt) transformations (eg: (cleaning normalizing, text tokenization)
+  * Offers easy to use interactive, visual interface for data prep (e.g. cleaning transforming analyzing data) which is ideal for limited, low code use experience, but is not intended for large-scale distributed data processing across multiple heterogeneous data sources.
+  * provides built-in transformations to mask sensitive data in tabular datasets while maintaining data integrity and structure.
+  * Inputs
+    * S3
+    * Athena
+    * Redshift
+    * EMR
+    * Lake formation (via Athena or AWS SDK awswrangler lib)
+    * SM Feature Store
+    * 3rd party sources (eg: Databricks, Snowflake Saas)
+  * Outputs
+    * S3
+    * SM Processing
+    * SM Pipelines
+    * SM Feature Store
+    * Autopilot
+    * As a jupyter notebook
+    * 3rd party external destinations
+    * Amazon Personalize
+    * Athena
+    * Redshift
+  * Does not integrate with DynamoDB
+
+### SM Data Wrangler versus AWS Glue vs EMR
+  * All are great for ETL
+  * SM Data Wrangler more efficient when integrating with SM (eg: ETL=>SM Feature Store)
+  * Glue and EMR are great for large-scale distributed data processing across multiple heterogeneous data sources, though EMR is best if full control over configurations and cluster management.
+  * SageMaker Data Wrangler is optimized for interactive data preprocessing and visualization but is not intended for large-scale distributed data processing across multiple heterogeneous data sources.
 
 # AWS Lake Formation
   * Managed service that simplifies the creation, security, and management of data lakes with fine-grained access control and centralized governance.
