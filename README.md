@@ -34,11 +34,14 @@ Note these are my own personal notes and are a work in progress as I study towar
   * name, steps, and parameters
   * designed to be scalable up to tens of thousands of ML workflows
 
+## SM Studio
+  * Tagging SM resources within a SM Studio domain allows cost tracking per user or team. AWS Budgets can then monitor these tags and send alerts when usage exceeds a defined threshold.
+ 
 ## SM Feature Store 
   * stores versions
   * serves features for both training and real-time inference, ensuring feature consistency and lineage
   * off-line versus online
-    
+
 ## SM script mode
   * run custom training scripts inside managed prebuilt SM containers
   * allows the use of AWS infrastructure to enable scaling, distribute training and logging
@@ -309,6 +312,22 @@ statistical method designed for binary classification problems
 ## Load Balancers
   * Need both port 443 and 80 to be open with the latter being redirected to the former if enabled by the attachmment of an SSL certificate to the LB to allow the termination of HTTPS connections and thus serve secure content
 
+## AWS Cost Explorer
+  * A visualization tool for analyzing cost and usage trends over time, but it does not provide alerting capabilities.
+  * provides insights but cannot send cost threshold alerts
+  * provide visibility and recommendations but lack built-in alerting functionality
+
+## AWS Budgets
+  * A cost management service that allows users to set spending thresholds and receive automated alerts when actual or forecasted costs exceed those limits.
+  * must be used to configure and send cost alerts, although it can use Cost Explorer data
+
+## Amazon CloudWatch
+  * while powerful for operational monitoring (CPU, memory, latency), is not designed to monitor or alert on billing data.
+
+## AWS Trusted Advisor
+  * A best-practice guidance tool that identifies cost optimization, security, and performance improvements, but it does not send budget alerts.
+  * provide visibility and recommendations but lack built-in alerting functionality
+
 ## AWS Batch
   * Better matched over SM Batch jobs for extremely large, compute-intensive/high performance/scalable batch workloads 
 
@@ -378,7 +397,6 @@ statistical method designed for binary classification problems
 
 ## Model Monitor job or CloudWatch alerts
   * continuously track precision and recall. If a drop in recall is detected, indicating increased financial risk, the pipeline can trigger a retraining step using updated customer behavior data.
-
 
 # Model Overfitting
   * Compare training and validation loss curves over time: if validation loss much higher than training loss-> model overfitting
