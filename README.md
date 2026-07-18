@@ -163,7 +163,7 @@ statistical method designed for binary classification problems
   * Medical version detects PHI via DetectPHI API
   * analyzes only text data (eg: can't process audio/video/pictures)
   * Input social media, emails, web pages, documents, transcripts, medical records (Comprehend Medical)
-  * PII Identification & Redaction
+  * PII/sensitive data identification and redaction, though not optimized for automated, large-scale scanning and redaction of sensitive data stored in S3 with minimal operational overhead.
   * Doesn't offer semantic search or vector embedding (look to Kendra for this)
   * Targeted sentiment (for specific entities)
   * Can train on your own data
@@ -500,7 +500,14 @@ statistical method designed for binary classification problems
   * Can normalize language, but can't address formatting, noise, missing fields.  Look to glue and Data Wrangler for cleaning and normalization
 
 # AWS Macie
-  * Discover and classify sensitive data
+  * Discover and classify sensitive data in S3
+  * can trigger AWS Lambda functions to redact or remove sensitive information when added to an S3 bucket, providing an automated, scalable, and low-overhead solution
+  * leverages ML to automatically detect, classify, and protect sensitive data/PII
+  * most appropriate solution when you need to identify and redact sensitive data stored in S3 before it is accessed or processed with little manual intervention
+  * Concerning redaction/removal, other services mentioned, such as AWS Glue, Amazon Comprehend, and AWS DataBrew, are capable of processing and transforming data, but they either:
+    * Require manual setup for redaction
+    * Are not designed for sensitive data classification
+    * Best suited for analytics rather than preprocessing sensitive datasets for ML pipelines.
 
 # Shortcuts
   * 'manually' is usually a tell to not use the premise (eg: CPU/memory scaling doesn't necessarily help with manually scaled)
