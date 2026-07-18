@@ -36,7 +36,10 @@ Note these are my own personal notes and are a work in progress as I study towar
 
 ## SM Studio
   * Tagging SM resources within a SM Studio domain allows cost tracking per user or team. AWS Budgets can then monitor these tags and send alerts when usage exceeds a defined threshold.
- 
+
+## SM Domain
+  * A logical container that groups users, shared storage, and execution resources, enabling collaboration and centralized management for ML development teams.
+	 
 ## SM Feature Store 
   * stores versions
   * serves features for both training and real-time inference, ensuring feature consistency and lineage
@@ -127,6 +130,13 @@ Note these are my own personal notes and are a work in progress as I study towar
 
 ### Logistic regression
 statistical method designed for binary classification problems
+
+# Amazon Bedrock
+  *  A fully managed AWS service that provides access to foundation models (FMs) from various providers, allowing developers to build and scale generative AI applications without managing underlying infrastructure.
+  * Model caching can improve performance and consistency for repeated questions
+  * Lowering the temperature via the Amazon Bedrock API and reducing the top-K parameter limits randomness in token selection, leading to more deterministic and consistent responses from the LLM.
+  * Retrain the LLM (aka: fine tune the FM [not from scratch]) with a retail-specific dataset to improve consistency in responses related to product information and return policies.
+
 
 # Data mesh architecture
   * data as a product with the decentralized data ownership and domain oriented architecture
