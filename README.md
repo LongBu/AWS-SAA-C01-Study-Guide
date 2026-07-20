@@ -43,7 +43,7 @@ Note these are my own personal notes and are a work in progress as I study towar
 ## SM Feature Store 
   * stores versions
   * serves features for both training and real-time inference, ensuring feature consistency and lineage
-  * off-line versus online
+  * offline versus online
 
 ## SM script mode
   * run custom training scripts inside managed prebuilt SM containers
@@ -318,7 +318,7 @@ statistical method designed for binary classification problems
   * Not suitable for blocking IP addresses at the subnet or network level.
 
 ## Network Access Control List (NACL)
-  * Operates at the subnet level with explicity allow/deny rules - ideal for blocking specific IPs without disrupting legitimate traffic
+  * Operates at the subnet level with explicit allow/deny rules - ideal for blocking specific IPs without disrupting legitimate traffic
   * Stateless - evaluates rules for both inbound and outbound traffic
   * Centralized control over multiple resources
   * Blocks malicious traffic at the subnet boundary
@@ -336,7 +336,7 @@ statistical method designed for binary classification problems
 
 ## EKS
   * managed kubernetes service that reduces operational overhead while providing full container orchestration
-  * Horizontal Pod Autoscaler (HPA) automatically scales prod replicas based on real-time metrics per configuration (CPU, memory, etc.)
+  * Horizontal Pod Autoscaler (HPA) automatically scales pod replicas based on real-time metrics per configuration (CPU, memory, etc.)
   * Managed control plane - no manual cluster management
   * Dynamic scaling based on observed workload metrics
   * Full kubernetes orchestration for containerized applications
@@ -346,7 +346,7 @@ statistical method designed for binary classification problems
   * does not provide native Kubernetes orchestration features required for managing EKS workloads directly.
 
 ## Load Balancers
-  * Need both port 443 and 80 to be open with the latter being redirected to the former if enabled by the attachmment of an SSL certificate to the LB to allow the termination of HTTPS connections and thus serve secure content
+  * Need both port 443 and 80 to be open with the latter being redirected to the former if enabled by the attachment of an SSL certificate to the LB to allow the termination of HTTPS connections and thus serve secure content
 
 ## AWS Cost Explorer
   * A visualization tool for analyzing cost and usage trends over time, but it does not provide alerting capabilities.
@@ -377,13 +377,13 @@ statistical method designed for binary classification problems
 ## Feature selection versus model regularization
   * Model regularization does not directly select or remove input features
   * Model regularization reduces overfitting by penalizing model complexity
-  * Feature selection systematically identifies and retains the most predictive features, while discarding irrelevant/redudant features to reduce model complexity to improve accuracy
+  * Feature selection systematically identifies and retains the most predictive features, while discarding irrelevant/redundant features to reduce model complexity to improve accuracy
 
 ## L1 (LASSO) vs L2 (Ridge) Regularization
   * Preventing overfitting in ML in general
   * A regularization term is added as weights are learned
   * L1 term is the sum of the absolute values of the weights as a penalty to the model's loss function
-    * Performs feature selection - entire features go to O
+    * Performs feature selection - entire features go to 0
     * Computationally inefficient
     * Sparse output
     * Good to avoid curse of dimensionality
@@ -483,7 +483,7 @@ statistical method designed for binary classification problems
 
 ### Reserved Instances
   * Best suited for steady state workloads (prod)
-  * Lack flexibility to handle unpredicatable/varying trafflic load
+  * Lack flexibility to handle unpredictable/varying trafflic load
 
 ## EC2 Type suitability
   * General note:
@@ -522,8 +522,8 @@ statistical method designed for binary classification problems
 # Ensemble Learning
 
 ## (Model) Stacking
-  * Ensemble learning technique that combines more that one model through a meta-model that optimally weights/integrates the base learners to improve predictive performance at the expense of interpretability
-  * Captures complimentary information from the input models to result in more accurate/results
+  * Ensemble learning technique that combines more than one model through a meta-model that optimally weights/integrates the base learners to improve predictive performance at the expense of interpretability
+  * Captures complementary information from the input models to result in more accurate/results
 
 ## Bagging
   * Trains multiple instances of the same algorithm on bootstrapped samples and averages these predictions to reduce variance (eg: Random Forest)
