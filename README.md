@@ -243,6 +243,9 @@ statistical method designed for binary classification problems
   * If anything to do with data warehousing seen in the question, start considering Redshift to be part of the solution
   * Massive Parallel Processing (MPP) available for fast data aggregation, scoring and querying
   * Tight integration with SM
+  * Dynamic data masking obfuscates sensitive data in specific columns in real-time, preserving source data integrity and avoiding data duplication or transformation.
+  * Materialized views exclude sensitive fields but require creating and maintaining additional views and do not dynamically obfuscate data, which may not fully protect sensitive information.
+
 
 # AWS Glue
   * serverless ETL service that uses Apache Spark under the hood and is suitable for scalable data transformations
@@ -309,6 +312,18 @@ statistical method designed for binary classification problems
 
 # Miscellaneous
 
+## AWS WAF
+  * Designed to protect web applications at the application layer, HTTP/S (Layer 7)
+  * Does not block network layer traffic within a VPC
+  * Not suitable for blocking IP addresses at the subnet or network level.
+
+## Network Access Control List (NACL)
+  * Operates at the subnet level with explicity allow/deny rules - ideal for blocking specific IPs without disrupting legitimate traffic
+  * Stateless - evaluates rules for both inbound and outbound traffic
+  * Centralized control over multiple resources
+  * Blocks malicious traffic at the subnet boundary
+  * Best for fine-grained network-level filtering in VPC environments (eg: SM training jobs) while preserving access for authorized systems
+
 ## KMS
   * CMK provides full control over policies and grants, automated key rotation, and integrate with CloudTrail to record all cryptographic operations for auditing purposes
   * AWS managed keys (AWS owned or AWS-managed CMKs) do not allow custom key policies or rotation schedules
@@ -318,6 +333,17 @@ statistical method designed for binary classification problems
   * Managed Rotation in AWS Secrets Manager is primarily designed for database credentials
   * Does not support automatic rotation of arbitrary API tokens, though it can securely store them
   * For API tokens, look to a Lambda to automate token rotation on a schedule (eg: every 90 days)
+
+## EKS
+  * managed kubernetes service that reduces operational overhead while providing full container orchestration
+  * Horizontal Pod Autoscaler (HPA) automatically scales prod replicas based on real-time metrics per configuration (CPU, memory, etc.)
+  * Managed control plane - no manual cluster management
+  * Dynamic scaling based on observed workload metrics
+  * Full kubernetes orchestration for containerized applications
+
+## Fargate
+  * serverless compute engine for containers
+  * does not provide native Kubernetes orchestration features required for managing EKS workloads directly.
 
 ## Load Balancers
   * Need both port 443 and 80 to be open with the latter being redirected to the former if enabled by the attachmment of an SSL certificate to the LB to allow the termination of HTTPS connections and thus serve secure content
@@ -402,6 +428,7 @@ statistical method designed for binary classification problems
 
 ## Specificity:
   * TN/(TN + FP) = TN/N
+  * useful evaluation metric to reduce the risk of false positives
   * Less relevant when primary concern is identifying True Positives and avoiding False Negatives (better suited for precision and recall)
   * The proportion of true negatives correctly identified—focuses on minimizing false positives in some contexts.
 
